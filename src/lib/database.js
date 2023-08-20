@@ -11,6 +11,4 @@ const db = mariadb.createPool({
   acquireTimeout: 5000 // 5s to make a connection
 })
 
-console.log(env.DB_HOST)
-
 export default db
