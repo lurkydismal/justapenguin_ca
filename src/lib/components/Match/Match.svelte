@@ -1,7 +1,8 @@
 <script>
-export let result = {id: 0, winner: 'default winner', loser: 'default loser', time: 'time of day'}
+/** @type {import('$lib/types').Record} */
+export let record = {id: 0, winner: 'default winner', loser: 'default loser', time: 'time of day'}
 
-let { id, winner, loser, time } = result
+let { id, winner, loser, time } = record
 </script>
 
 <a href="/records/match/{id}" class="top">

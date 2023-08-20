@@ -1,20 +1,18 @@
 <script>
 import { Match, Pager } from '$lib'
 
-// i need to figure out how jsdoc comments work to keep this type safe
+/** @type {import('./$types').PageServerData} */
 export let data
-$: ( data ) 
-let { results, page } = data
 </script>
 
-{#each results as result}
+{#each data.records as record}
 	<div class="inner">
-		<Match {result} />
+		<Match {record} />
 	</div>
 {/each}
 
 <div class="pager">
-	<Pager currentPage={page}/>
+	<Pager currentPage={data.pageNum}/>
 </div>
 
 <style>
