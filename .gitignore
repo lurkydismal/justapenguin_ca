@@ -1,5 +1,4 @@
 node_modules
 log*.data
 reports.data
-config.js
 pm2/*.log
