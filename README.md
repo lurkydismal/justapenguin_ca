@@ -48,7 +48,7 @@ For example:
     1. Logos are 220x56 images. Each character should have their logo.\
         Server randomly shows them each refresh.
     1. Name is important: `logo_{{character id}}.png`.
-5. Clean contents of `data\match.data`. These are not for your game (Don't delete the file though).
+5. Clean contents of `match_database/match.data`. These are not for your game (Don't delete the file though).
 
 And that's it. You can run this, and it shouldn't break. If problems, check FAQ in the website on how to contact Eika.\
 However, at this point you will not have any matches yet of your game.
@@ -81,9 +81,9 @@ You will then be able to approve it or delete it.
 ## Logging
 
 There is some logging going on when matches are added/edited/deleted.\
-Log file can be found in `data\log-{{DATE}}.data`. This will automatically create a new log file each month of the year.
+Log file can be found in `match_database/log-{{DATE}}.data`. This will automatically create a new log file each month of the year.
 
-There is also report file in `data\reports.data`.\
+There is also report file in `match_database/reports.data`.\
 This one has info from users on incorrect matches. E.g. if a wrong winner was set, or some character is incorrect.\
 Useful to peek and fix some matches once in a while.
 
