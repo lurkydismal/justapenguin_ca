@@ -1,93 +1,100 @@
-# KusaGames
-A base website suite for gaming match database.\
-Designed for 1v1 matches, but you could fork and amend it for any competition.\
-KusaGames in action: http://mbaacc.melty.games/ and http://lumina.melty.games/
+# justapenguin_ca
 
-## How to run
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2376e2bd2d6b4925a63196278ae20358)](https://app.codacy.com/gh/lurkydismal/justapenguin_ca/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
-0. Need to install Node.js: https://nodejs.org/en/download/
-1. Download the source code.
-2. Run `npm install` to pull dependencies.
-3. Copy `config.example.js` and rename the copy to `config.js`.
-4. Adjust `config.js` to your liking.
-5. Run `node index.js` to start. 
-6. Alternatively you can also run using pm2 via `pm2 start ecosystem.config.js`. (You will need to have pm2 installed)
+> Outline a brief description of your project.
+> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
 
-## Adding your own game
+## Table of Contents
 
-It's fairly simple.
-1. Change `server/charIdMap.js` and add your characters.
-    1. `id` **must** match the object's id.\
-        Try using short ids to reduce match datafile size.
-    1. `name` is commonly known name for the character.\
-        This name shows up in the select boxes when searching and in the editor selects too.
-    1. `full` is full name of the character.\
-        Full name shows up in the characters page. Can be empty.
-    1. `wiki` is a link to a place where people can read on the character. Like a guide or something.
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Setup](#setup)
+* [Usage](#usage)
+* [Project Status](#project-status)
+* [Room for Improvement](#room-for-improvement)
+* [Acknowledgements](#acknowledgements)
+* [Contact](#contact)
+* [License](#license)
 
-For example:
-```
-"arc": {
-	"id": "arc",
-	"name": "Arcueid",
-	"full": "Arcueid Brunestud",
-	"wiki": "https://wiki.gbl.gg/w/Melty_Blood/MBTL/Arcueid_Brunestud"
-}
+## General Information
 
-```
-2. Add your character images to `site\img\chars`. 
-    1. Directly in the folder there should be each image with `{{character id}}.png`.\
-       These are 80x100 images used in the search result list and editor match list.
-    1. In `site\img\chars\big` full sized character images should be added.\
-       They show up as background in the characters page. Name should match the id.
-3. Amend `server\templates\characters.html` to use your characters.\
-   What you are looking for here is `.char-select` div.\
-   Make sure the img's src attribute has your character's id.\
-   Also data-id attribute should be your character's id.
-5. Create logos for each character in site\img\logos.
-    1. Logos are 220x56 images. Each character should have their logo.\
-        Server randomly shows them each refresh.
-    1. Name is important: `logo_{{character id}}.png`.
-5. Clean contents of `match_database/match.data`. These are not for your game (Don't delete the file though).
+* Provide general information about your project here.
+* What problem does it (intend to) solve?
+* What is the purpose of your project?
+* Why did you undertake it?
+<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
-And that's it. You can run this, and it shouldn't break. If problems, check FAQ in the website on how to contact Eika.\
-However, at this point you will not have any matches yet of your game.
+## Technologies Used
 
-## Adding matches
-Anyone can add matches. However, these matches will be added as provisional.\
-Meaning they will not show up in the search, until they are approved by the trusted people with token.
+* Tech 1 - version 1.0
+* Tech 2 - version 2.0
+* Tech 3 - version 3.0
 
-You can add a token by modifying `config.js`. In the config.js,  there is an `contributors` array.\
-In the array each object is a contributor that can have a token.\
-You can see in the example Eika has token `eikaaa`.\
-This means that contributor, once they enter this token in the Editor page, will be able to add matches.\
-And these matches will not need an approval.\
-Further to this, that contributor does not have noApprove flag. This means that Eika is one of the contributors that can also approve provisional matches.\
-Some contributors might not have a token, they are there to be seen in Contributors page.\
-These could be, for example, people who helped with the hosting of the website, or patreon supporters.
+## Features
 
-Now that you know your token, head over to Editor page in the website.\
-**Read the information in the Editor page!** \
-Again. **Read the information in the Editor page!**
+List the ready features here:
 
-Now you know how to add matches using the editor!
+* Awesome feature 1
+* Awesome feature 2
+* Awesome feature 3
 
-Try adding them without a token (you can update it to some invalid token instead of removing a token cookie).\
-Once you add provisional videos, set valid token back and note the `Check and maybe approve some provisional videos?` link.\
-This link doesn't appear if `noApprove` flag is set on the contributor.\
-Click on the link and you will see the provisional video you added.\
-You will then be able to approve it or delete it.
+## Screenshots
 
-## Logging
+![Example screenshot](./img/screenshot.png)
+<!-- If you have screenshots you'd like to share, include them here. -->
 
-There is some logging going on when matches are added/edited/deleted.\
-Log file can be found in `match_database/log-{{DATE}}.data`. This will automatically create a new log file each month of the year.
+## Setup
 
-There is also report file in `match_database/reports.data`.\
-This one has info from users on incorrect matches. E.g. if a wrong winner was set, or some character is incorrect.\
-Useful to peek and fix some matches once in a while.
+What are the project requirements/dependencies? Where are they listed?
+A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
 
-## Backend structure
+Proceed to describe how to
+install / setup one's local environment / get started with the project.
 
-Just an express website.\
-Underscore.js is used for page templating.
+## Usage
+
+How does one go about using it?
+Provide various use cases and code examples here.
+
+`write-your-code-here`
+
+## Project Status
+
+Project is: _in progress_ / _complete_ / _no longer being worked on_.
+If you are no longer working on it, provide reasons why.
+
+## Room for Improvement
+
+Include areas you believe
+need improvement / could be improved.
+Also add TODOs for future development.
+
+Room for improvement:
+
+* Improvement to be done 1
+* Improvement to be done 2
+
+To do:
+
+* Feature to be added 1
+* Feature to be added 2
+
+## Acknowledgements
+
+Give credit here.
+
+* This project was inspired by...
+* This project was based on [this tutorial](https://www.example.com/).
+* Many thanks to...
+
+## Contact
+
+Created by [@example](https://example.com/) - feel free to contact me!
+
+## License
+
+This project is open source and available under the
+[GNU General Public License v3.0](https://github.com/lurkydismal/justapenguin_ca/blob/main/LICENSE).
