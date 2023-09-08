@@ -1,0 +1,11 @@
+{
+    "charData": {
+        "full": "full",
+        "name": "name",
+        "wiki": "https://www.example.com",
+        "id": "c1"
+    },
+    "charPlayers": {
+        "name": "Player"
+    }
+}

@@ -1,4 +1,4 @@
-const utils = require( "./functions/timeUtils.js" );
+import {convertSecondsToReadable} from "./functions/time_utils.js";
 
 function MatchManger( server ) { this.server = server; }
 
@@ -114,7 +114,7 @@ MatchManger.prototype.addMatch = function( form, ip, auth ) {
     videoData.matches = videoData.matches || [];
     videoData.matches.push( {
         "time" : parseInt( form.time ),
-        "readableTime" : utils.convertSecondsToReadable( form.time ),
+        "readableTime" : convertSecondsToReadable( form.time ),
         "p1char" : form.p1char,
         "p1name" : form.p1name,
         "p2char" : form.p2char,
@@ -171,7 +171,7 @@ MatchManger.prototype.editMatch = function( form, ip, auth ) {
     if ( match.time !== form.time ) {
         log += `Time from: ${match.time} to ${form.time}\t`;
         match.time = parseInt( form.time );
-        match.readableTime = utils.convertSecondsToReadable( match.time );
+        match.readableTime = convertSecondsToReadable( match.time );
     }
     if ( match.p1char !== form.p1char ) {
         log += `P1 Char from: ${match.p1char} to ${form.p1char}\t`;
@@ -326,4 +326,4 @@ MatchManger.prototype.validateAddEditMatchForm = function(
     return null;
 };
 
-module.exports = MatchManger;
+export {MatchManger};

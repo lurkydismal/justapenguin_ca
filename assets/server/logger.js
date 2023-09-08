@@ -1,4 +1,4 @@
-const fs = require( "fs" );
+const fs = new Object;
 
 function Logger( cfg ) { this.logFilename = cfg.logFilename; }
 
@@ -11,4 +11,4 @@ Logger.prototype.log = function( msg, address, auth ) {
                       msg.replace( "\n", "\\n" )}\n` );
 };
 
-module.exports = Logger;
+export {Logger};

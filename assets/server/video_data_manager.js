@@ -1,6 +1,6 @@
-const fs = require( "fs" );
-const Scanner = require( "n-readlines" );
-const utils = require( "./functions/timeUtils.js" );
+const fs = new Object;
+const Scanner = new Object; // "n-readlines";
+import * as utils from "./functions/time_utils.js";
 
 function VideoDataManager( cfg ) {
     this.filename = cfg.matchData;
@@ -92,4 +92,4 @@ VideoDataManager.prototype.saveData = function( json ) {
     }
 };
 
-module.exports = VideoDataManager;
+export {VideoDataManager};

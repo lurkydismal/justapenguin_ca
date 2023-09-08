@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#25282c">
+    <meta property="og:title" content="placeholder">
+    <meta property="og:image" content="placeholder">
+    <meta property="og:description" content="placeholder">
+    <meta property="og:type" content="website">
+
+    <title>placeholder</title>
+
+    <link rel="shortcut icon" href="./pages/img/favicon.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="./pages/css/style.io.min.css">
+    <link rel="stylesheet" type="text/css" href="./pages/css/main.css">
+
+    <script defer src="https://unpkg.com/htmx.org@1.9.5"></script>
+    <script defer src="./pages/js/dark.min.js"></script>
+    <script async src="./std.js"></script>
+</head>
+
+<body>
+    <script async type="module">
+        import {apps} from "./ecosystem.config.js";
+        import {config} from "./config.js";
+        import {Server} from "./server/server.js";
+        import {charIdMap} from "./server/char_id_map.js";
+
+        window.apps = apps;
+        window.config = config;
+
+        let server = new Server(config);
+
+        document.querySelector("meta[property=\"og:title\"]").setAttribute("content", apps.name);
+        document.querySelector("meta[property=\"og:image\"]").setAttribute("content", server.getRandomPortrait());
+
+        window.top.document.title = apps.name;
+
+        const logoSourceDirectory = "./pages/img/logos/";
+        const logoImageExtension = ".png";
+
+        window.randomValue = new Uint8Array(1);
+        crypto.getRandomValues(randomValue);
+
+        $("logo").src = logoSourceDirectory + "logo_c" + ((randomValue[0] % Object.keys(charIdMap).length) + 1) + logoImageExtension;
+    </script>
+
+    <header>
+        <div class="ms-menu">
+            <div class="ms-menu-logo m-0">
+                <a onclick="loadIndexPage()"><img alt="Logo" id="logo"></a>
+            </div>
+            <nav class="ms-menu-link float-right">
+                <ul>
+                    <a target="_blank" href="https://www.example.com">
+                        <img src="./pages/img/twitter.webp" alt="Twitter updates">
+                    </a>
+                    <a target="_blank" href="https://www.example.com">
+                        <img class="menu-img-shadow" src="./pages/img/bmc.png" alt="Buy me a coffee">
+                    </a>
+                    <a target="_blank" href="https://www.example.com">
+                        <img src="./pages/img/patreon.png" alt="Become a patron">
+                    </a>
+                </ul>
+            </nav>
+            <nav class="ms-menu-link">
+                <input type="checkbox" id="ms-menu-toggle">
+
+                <label for="ms-menu-toggle" class="ms-menu-icon">
+                    <div class="hamburger-menu">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                </label>
+                <ul>
+                    <a hx-get="./server/templates/characters.html" hx-target="#external-content"
+                        onclick="loadExternalPage()">
+                        <li>Characters</li>
+                    </a>
+                    <a hx-get="./server/templates/statistics.html" hx-target="#external-content"
+                        onclick="loadExternalPage()">
+                        <li>Statistics</li>
+                    </a>
+                    <div class="menu-dropdown">
+                        <label>Other</label>
+                        <div class="menu-dropdown-content">
+                            <a hx-get="./server/templates/faq.html" hx-target="#external-content"
+                                onclick="loadExternalPage()">
+                                <li>FAQ</li>
+                            </a>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="external-content"></div>
+    </main>
+
+    <footer id="index-content">
+        <script defer src="./pages/js/index.js"></script>
+
+        <!-- <% let playerNames=server.statisticsManager.getPlayerNames(); let videoTags=server.statisticsManager.getVideoTags(); %> -->
+        <div class="container">
+            <div class="ms-content">
+                <hgroup class="ms-text-center py-4">
+                    <h2 class="shadow">Welcome to placeholder!</h1>
+                        <h5 class="shadow">A place where you can search and add placeholder games!</h5>
+                </hgroup>
+                <form method="GET" id="form">
+                    <input type="hidden" id="page" name="page" value="1">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="ms-form-group">
+                                <label><b>PLAYER 1</b></label>
+                                <span class="select">
+                                    <select id="p1char" name="p1char" class="pchar">
+                                        <option value="">Select character</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="ms-form-group">
+                                <input id="p1name" name="p1name" placeholder="Player name" list="p1name-list">
+                                <datalist id="p1name-list">
+                                    <!-- <% for(let name of playerNames) { print("<option value='" + name + "'>");
+                                                }
+                                            %> -->
+                                </datalist>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="ms-form-group">
+                                <label><b>MATCH DETAILS</b></label>
+                                <span class="select">
+                                    <select id="winner" name="winner">
+                                        <option value="">Select winner</option>
+                                        <option value="1">Player 1</option>
+                                        <option value="2">Player 2</option>
+                                        <option value="D">Draw</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="ms-form-group">
+                                <span class="select">
+                                    <select id="net" name="net">
+                                        <option value="">Locals and Netplay</option>
+                                        <option value="L">Locals only</option>
+                                        <option value="N">Netplay only</option>
+                                    </select>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="ms-form-group">
+                                <label><b>PLAYER 2</b></label>
+                                <span class="select">
+                                    <select id="p2char" name="p2char" class="pchar">
+                                        <option value="">Select character</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="ms-form-group">
+                                <input id="p2name" name="p2name" placeholder="Player name" list="p2name-list">
+                                <datalist id="p2name-list">
+                                    <!-- <% for(let name of playerNames) { print("<option value='" + name + "'>");
+                                                }
+                                            %> -->
+                                </datalist>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="ms-form-group">
+                                <label><b>VIDEO DETAILS</b></label>
+                                <input id="videoTag" name="tag" type="text" placeholder="Tag search" list="tag-list">
+                                <datalist id="tag-list">
+                                    <!-- <% for(let tag of videoTags) { print("<option value='" + tag + "'>");
+                                                }
+                                                %> -->
+                                </datalist>
+                            </div>
+                            <div class="ms-form-group">
+                                <input id="videoId" name="vid" placeholder="YouTube video ID">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <button id="search-button" type="button"
+                                class="ms-btn ms-info ms-fullwidth ms-medium">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="ms-text-center py-4 shadow">Search is not supported.</h2>
+
+            <!-- <% let matches=search && search.matches; if(!matches) { %> -->
+            <h2 class="ms-text-center py-4 shadow d-none">Do a search!</h2>
+            <!-- <% } else if(matches.length===0) { %> -->
+
+            <h2 class="ms-text-center py-4 shadow d-none">No results.</h2>
+            <!-- <% } else { %>
+                                <% let perPage=server.cfg.resultsPerPage; let pages=Math.ceil(search.total / perPage); let
+                                    page=search.page; let diff=7; if(page> pages) {
+                                    page = pages;
+                                    }
+        
+                                    let startPage = page - diff;
+                                    if(startPage <= 0) { startPage=1; } let endPage=page + diff; if(endPage>= pages) {
+                                        endPage = pages;
+                                        }
+        
+                                        let prevDisabled = page === 1;
+                                        let nextDisabled = page === endPage;
+                                        %> -->
+
+            <div class="ms-pagination d-none">
+                <ul>
+                    <li>
+                        <a data-page="<%=page-1%>" <%=prevDisabled?"class='ms-disabled'":""%>>Prev</a>
+                            </li>
+                                
+                            <li><a data-page=" 1" <%=page===1?"class='ms-active'":""%>>1</a></li>
+                    
+                            <!-- <% if(startPage > 1) { %>
+                                <li><span>&hellip;</span></li>
+                            <% } %> -->
+                    
+                            <!-- <%
+                                for(let i = startPage+1; i < endPage; i++) {
+                                    let active = page === i;
+                                    %> -->
+                                    <li><a data-page=" <%=i%>" <%=active?"class='ms-active'":""%>><%=i%></a>
+                    </li>
+                    <!-- <% } %>
+        
+                                <% if(endPage < pages) { %>
+                                    <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                <% } %> -->
+
+                    <!-- <% if(startPage !==endPage) { %>
+                                <li><a data-page="<%=pages%>" <%=page===pages?"class='ms-active'":""%>><%=pages%></a></li>
+                            <% } %> -->
+
+                    <li>
+                        <a data-page=" <%=page+1%>" <%=nextDisabled?"class='ms-disabled'":""%>>Next</a>
+                                </li>
+                        </ul>
+                    </div>
+        
+                    <table class=" result-table ms-table d-none">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th class="d-none d-sm-table-cell">Date</th>
+                                    <th>Matchup details</th>
+                                    <th>Link</th>
+                                    <th class="d-none d-md-table-cell">Tags</th>
+                                    <th class="d-none d-lg-table-cell">Report</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <% let currentVideo=matches[0].videoData.id; for(let match of matches) {
+                                if(match.videoData.id !==currentVideo) { %>
+                                <tr>
+                                    <td colspan="999" class="py-1 video-separator"></td>
+                                </tr>
+                                <% currentVideo=match.videoData.id; }
+                                    print(server.templateManager.renderTemplate("match_row.html", { match })); } %> -->
+                            </tbody>
+                            </table>
+                            <!-- <% let perPage=server.cfg.resultsPerPage; let pages=Math.ceil(search.total / perPage); let
+                            page=search.page; let diff=7; if(page> pages) {
+                            page = pages;
+                            }
+        
+                            let startPage = page - diff;
+                            if(startPage <= 0) { startPage=1; } let endPage=page + diff; if(endPage>= pages) {
+                                endPage = pages;
+                                }
+        
+                                let prevDisabled = page === 1;
+                                let nextDisabled = page === endPage;
+                                %> -->
+
+                            <div class="ms-pagination d-none">
+                                <ul>
+                                    <li>
+                                        <a data-page="<%=page-1%>" <%=prevDisabled?"class='ms-disabled'":""%>>Prev</a>
+                                    </li>
+        
+                                    <li><a data-page=" 1" <%=page===1?"class='ms-active'":""%>>1</a></li>
+        
+                                    <!-- <% if(startPage > 1) { %>
+                                        <li><span>&hellip;</span></li>
+                                    <% } %> -->
+        
+                                    <!-- <%
+                                        for(let i = startPage+1; i < endPage; i++) {
+                                            let active = page === i;
+                                            %> -->
+                                            <!-- <li><a data-page=" <%=i%>" <%=active?"class='ms-active'":""%>><%=i%>
+                                        </a>
+                                        -->
+                                        <!-- </li> -->
+                                        <!-- <% } %>
+        
+                                    <% if(endPage < pages) { %> -->
+                                        <!-- <li><span class="pagination-ellipsis">&hellip;</span></li> -->
+                                        <!-- <% } %> -->
+
+                                        <!-- <% if(startPage !==endPage) { %>
+                                <li><a data-page="<%=pages%>" <%=page===pages?"class='ms-active'":""%>><%=pages%></a></li>
+                                    <% } %> -->
+
+                                    <li>
+                                        <a data-page=" <%=page+1%>" <%=nextDisabled?"class='ms-disabled'":""%>>Next</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+    </footer>
+
+    <script type=" module" src="./get_characters.js"></script>
+
+                                            <script>
+                                                function loadIndexPage() {
+                                                    window.top.document.title = apps.name;
+
+                                                    $("index-content").classList.remove("d-none");
+                                                    $("external-content").classList.add("d-none");
+                                                }
+
+                                                function loadExternalPage() {
+                                                    $("index-content").classList.add("d-none");
+                                                    $("external-content").classList.remove("d-none");
+                                                }
+                                            </script>
+</body>
+
+</html>
