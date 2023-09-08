@@ -1,6 +1,5 @@
-const fs = require( "fs" );
-const Scanner = require( "n-readlines" );
-const utils = require( "./functions/timeUtils.js" );
+const Scanner = new Object; // "n-readlines"
+import * as utils from "./functions/time_utils.js";
 
 function StatisticsManager( server ) { this.server = server; }
 
@@ -351,4 +350,4 @@ StatisticsManager.prototype.getCharacterStats = function() {
     } );
 };
 
-module.exports = StatisticsManager;
+export {StatisticsManager};

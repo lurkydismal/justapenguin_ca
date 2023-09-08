@@ -1,13 +1,15 @@
-document.addEventListener( "DOMContentLoaded", () => {
-    let tables = document.getElementsByClassName( "sort-table" );
-    for ( let table of tables ) {
-        TableSort( table, table.dataset.sort.split( "," ) );
-    }
-} );
+if ( typeof tables === "undefined" ) {
+    var tables = document.getElementsByClassName( "sort-table" );
+}
+
+for ( let table of tables ) {
+    TableSort( table, table.dataset.sort.split( "," ) );
+}
 
 function TableSort( table, config ) {
     let tbody = table.tBodies[ 0 ];
     let th_cells = table.tHead.rows[ 0 ].cells;
+
     for ( let i = 0; i < th_cells.length; i++ ) {
         if ( config[ i ] === "" )
             continue;

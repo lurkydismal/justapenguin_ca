@@ -61,7 +61,4 @@ function convertTimeToSeconds( time ) {
     return seconds;
 }
 
-module.exports = {
-    convertSecondsToReadable,
-    convertTimeToSeconds
-};
+export {convertSecondsToReadable, convertTimeToSeconds};

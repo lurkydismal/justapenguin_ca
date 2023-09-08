@@ -1,9 +1,0 @@
-#ActionButton:after {
-	content: " @ " attr(data-time);
-}
-#ClipButton:after {
-	content: " @ " attr(data-time);
-}
-#EditorGuide {
-	margin-bottom: 10px;
-}

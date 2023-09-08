@@ -1,6 +1,8 @@
 <div class="container ms-text-center">
-	<button onclick="location.href='?chars=1'">Character list</button>
-	<p><%=character ? character.name : "Unknown Character"%> matchup list:</p>
+	<button onclick="return _RemoveHash();">Character list</button>
+	<p>
+		<%=character ? character.name : "Unknown Character" %> matchup list:
+	</p>
 </div>
 
 <div class="container">
@@ -14,29 +16,38 @@
 				<th><a>Wins</a></th>
 				<th class="d-none d-sm-table-cell"><a>Losses</a></th>
 				<th class="d-none d-sm-table-cell"><a>Draws</a></th>
-				<th><a>Winrate</a></th>
+				<th><a>Win rate</a></th>
 			</tr>
 		</thead>
 		<tbody>
-			<%
-			let result = server.statisticsManager.getCharacterMatchupStats(character ? character.id : "");
-			for(let i = 0; i < result.length; i++) {
-				%>
-				<tr>
-				<td><%=i + 1%></td>
-				<td>vs <%=result[i].name%></td>
-				<td class="d-none d-md-table-cell">
-					<a target="_blank" href="/?p1char=<%=character.id%>&p2char=<%=result[i].id%>">View games</a>
+			<!-- <% let result=server.statisticsManager.getCharacterMatchupStats(character ? character.id : "" ); for(let
+				i=0; i < result.length; i++) { %> -->
+			<tr>
+				<td>
+					<%=i + 1%>
 				</td>
-				<td><%=result[i].total%></td>
-				<td><%=result[i].wins%></td>
-				<td class="d-none d-sm-table-cell"><%=result[i].losses%></td>
-				<td class="d-none d-sm-table-cell"><%=result[i].draws%></td>
-				<td><%=(100 * result[i].winrate).toFixed(2)%>&percnt;</td>
-				</tr>
-				<%
-			}
-			%>
+				<td>vs <%=result[i].name%>
+				</td>
+				<td class="d-none d-md-table-cell">
+					<a onclick="return _RemoveHash();">View games</a>
+				</td>
+				<td>
+					<%=result[i].total%>
+				</td>
+				<td>
+					<%=result[i].wins%>
+				</td>
+				<td class="d-none d-sm-table-cell">
+					<%=result[i].losses%>
+				</td>
+				<td class="d-none d-sm-table-cell">
+					<%=result[i].draws%>
+				</td>
+				<td>
+					<%=(100 * result[i].winrate).toFixed(2)%>&percnt;
+				</td>
+			</tr>
+			<!-- <% } %> -->
 		</tbody>
 	</table>
 </div>

@@ -8,7 +8,7 @@ const DEFAULT_SEARCH = {
     net : ""
 };
 
-function SearchManager( cfg ) { this.resultsPerPage = cfg.resultsPerPage; };
+function SearchManager( cfg ) { this.resultsPerPage = cfg.resultsPerPage; }
 
 SearchManager.prototype.search = function( data, form ) {
     let searchQuery = {
@@ -244,4 +244,4 @@ function playerMatches( mChar, mName, sqChar, sqName ) {
     return true;
 }
 
-module.exports = SearchManager;
+export {SearchManager};
