@@ -21,9 +21,9 @@ We communicate primarily over GitHub.
 Before you get started, we encourage you to read these documents which describe some of our community norms:
 
 1. [Our code of conduct](CODE_OF_CONDUCT.md), which stipulates explicitly
-   that everyone must be gracious, respectful, and professional. This
-   also documents our conflict resolution policy and encourages people
-   to ask questions.
+    that everyone must be gracious, respectful, and professional. This
+    also documents our conflict resolution policy and encourages people
+    to ask questions.
 
 2. # Values
 
@@ -117,22 +117,22 @@ useful for our engineers.
 If you want to help us triage, you are very welcome to do so!
 
 1. Read [our code of conduct](CODE_OF_CONDUCT.md), which stipulates explicitly
-   that everyone must be gracious, respectful, and professional. If you're helping out
-   with triage, you are representing the justapenguin_ca team, and so you want to make sure to
-   make a good impression!
+    that everyone must be gracious, respectful, and professional. If you're helping out
+    with triage, you are representing the justapenguin_ca team, and so you want to make sure to
+    make a good impression!
 
 <!-- Help out as described in our wiki: https://github.com/lurkydismal/justapenguin_ca/wiki/Triage -->
 
 2. You won't be able to add labels at first, so instead start by trying to
-   do the other steps, e.g. trying to reproduce the problem and asking for people to
-   provide enough details that you can reproduce the problem, pointing out duplicates,
-   and so on.
+    do the other steps, e.g. trying to reproduce the problem and asking for people to
+    provide enough details that you can reproduce the problem, pointing out duplicates,
+    and so on.
 
 3.
-    * `P4` means "important bug", and each level above `P4` (from `P3` to `P0`) is an order of magnitude higher importance.
-    * If you have permission, assign bugs to yourself if you're working on them.
-    * Unassign bugs that you are not working on soon.
-    * If an issue is not assigned, assume it is available to be worked on.
+     * `P4` means "important bug", and each level above `P4` (from `P3` to `P0`) is an order of magnitude higher importance.
+     * If you have permission, assign bugs to yourself if you're working on them.
+     * Unassign bugs that you are not working on soon.
+     * If an issue is not assigned, assume it is available to be worked on.
 
 
 Quality Assurance
@@ -165,18 +165,18 @@ are strongly recommended to go through these documents in the order
 presented.
 
 1. [Tree hygiene](Tree_hygiene.md),
-   which covers how to land a PR, how to do code review, how to
-   handle breaking changes, how to handle regressions, and how to
-   handle post-commit test failures.
+    which covers how to land a PR, how to do code review, how to
+    handle breaking changes, how to handle regressions, and how to
+    handle post-commit test failures.
 
 2. [Our style guide](Style_guide_for_justapenguin_ca_repo.md),
-   which includes advice for designing APIs for justapenguin_ca, and how to
-   format code in the app.
+    which includes advice for designing APIs for justapenguin_ca, and how to
+    format code in the app.
 
 3. [justapenguin_ca design doc template](Template.md),
-   which should be used when proposing a new technical design. This is a good
-   practice to do before coding more intricate changes.
-   See also our [guidance for writing design docs](Design_Documents.md).
+    which should be used when proposing a new technical design. This is a good
+    practice to do before coding more intricate changes.
+    See also our [guidance for writing design docs](Design_Documents.md).
 
 
 Releases
