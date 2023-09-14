@@ -1,3 +1,5 @@
+# Design documents
+
 We have a [template](Template.md) you can use. It describes the process for your design doc.
 We recommend you use that template so that people can immediately recognize that this is a justapenguin_ca design document and that it is shared publicly.
 

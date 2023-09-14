@@ -6,43 +6,44 @@ description: >
 ---
 
 {% comment %}
-  PLEASE READ THESE GENERAL INSTRUCTIONS:
-  * All lines of text should be 80 chars OR LESS.
-    The writers strongly prefer semantic line breaks.
-  * DON'T SUBMIT a PR weeks and weeks in advance.
-    Ideally, submit a PR once you have confirmed
-    info on the version number where the breaking
-    change landed.
-  * One of the most important things to fill out
-    in this template is the *Timeline* section.
-    I won't approve/merge the PR until the "landed in"
-    release info is provided. For example:
-    `Landed in version: 1.21.0-5.0.pre<br>`.
-    Do NOT list the PR in this section.
-  * The text in this page should be backwards looking,
-    so write about previous behavior in past tense,
-    not future tense. People are reading this months
-    from now when the change is likely in the stable
-    release, not today. Don't say "in a month" or
-    talk about your plan to do something next week.
-    Assume you've done it, and that they're looking
-    back to figure out how to migrate their code.
-  * Use sentence case for headings and titles.
-    (`## Migration guide`, NOT `Migration Guide`)
-  * DON'T use the abbreviation `i.e.` or `e.g.`.
-    Use "for example" or "such as", and similar.
-  * For links, use the macros where possible.
-    But don't use "github.com" in your URLs.
-    Use the {{site.github}}, macros.
-  * AVOID "will" when possible, in other words,
-    stay in the present tense. For example:
-    Bad: "When encountering an xxx value,
-          the code will throw an exception."
-    Good: "When encountering an xxx value,
-           the code throws an exception."
-    Good use of "will": "In release 2.0, the xxx API
-          will be deprecated."
-  * Finally, delete the comment tags and text from the
+PLEASE READ THESE GENERAL INSTRUCTIONS:
+
+* All lines of text should be 80 chars OR LESS.
+  The writers strongly prefer semantic line breaks.
+* DON'T SUBMIT a PR weeks and weeks in advance.
+  Ideally, submit a PR once you have confirmed
+  info on the version number where the breaking
+  change landed.
+* One of the most important things to fill out
+  in this template is the *Timeline* section.
+  I won't approve/merge the PR until the "landed in"
+  release info is provided. For example:
+  `Landed in version: 1.21.0-5.0.pre<br>`.
+  Do NOT list the PR in this section.
+* The text in this page should be backwards looking,
+  so write about previous behavior in past tense,
+  not future tense. People are reading this months
+  from now when the change is likely in the stable
+  release, not today. Don't say "in a month" or
+  talk about your plan to do something next week.
+  Assume you've done it, and that they're looking
+  back to figure out how to migrate their code.
+* Use sentence case for headings and titles.
+  (`## Migration guide`, NOT `Migration Guide`)
+* DON'T use the abbreviation `i.e.` or `e.g.`.
+  Use "for example" or "such as", and similar.
+* For links, use the macros where possible.
+  But don't use "github.com" in your URLs.
+  Use the {{site.github}}, macros.
+* AVOID "will" when possible, in other words,
+  stay in the present tense. For example:
+  Bad: "When encountering an xxx value,
+        the code will throw an exception."
+  Good: "When encountering an xxx value,
+          the code throws an exception."
+  Good use of "will": "In release 2.0, the xxx API
+        will be deprecated."
+* Finally, delete the comment tags and text from the
     final PR.
 {% endcomment %}
 
@@ -111,8 +112,8 @@ Code after migration:
   the old API. Use the following template:
 {% endcomment %}
 
-Landed in version: xxx<br>
-In stable release: not yet
+Landed in version: xxx\
+In stable release: not yet\
 Reverted in version: xxx  (OPTIONAL, delete if not used)
 
 ## References
