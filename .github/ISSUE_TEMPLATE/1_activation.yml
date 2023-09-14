@@ -1,0 +1,58 @@
+name: I am having difficulty installing justapenguin_ca or getting it to work
+description: You have run into problems while downloading or installing justapenguin_ca, or the
+  "justapenguin_ca" is crashing, or you are running into some other issue before even
+  being able to use "justapenguin_ca".
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for using justapenguin_ca!
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered.
+      options:
+      - label: I have searched the [existing issues](https://github.com/lurkydismal/justapenguin_ca/issues)
+        required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Please tell us exactly how to reproduce the problem you are running into.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Actual results
+      description: Please tell us what is actually happening
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Logs
+      description: |
+        Include the full logs of the commands you are running between the lines
+        with the backticks below. If you are running any `justapenguin_ca` commands,
+        please include the output of running them with `--verbose`; for example,
+        the output of running `justapenguin_ca --verbose --random-port 10000 30000`.
+
+        If the logs are too large to be uploaded to Github, you may upload
+        them as a `txt` file or use online tools like https://pastebin.com to
+        share it.
+
+        Note: Please do not upload screenshots of text. Instead, use code blocks
+        or the above mentioned ways to upload logs.
+      value: |
+        <details>
+        <summary>Logs</summary>
+
+        ```console
+
+        <!-- Paste your logs here -->
+
+        ```
+
+        </details>

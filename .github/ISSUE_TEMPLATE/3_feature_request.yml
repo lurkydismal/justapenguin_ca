@@ -1,0 +1,43 @@
+name: Feature request
+description: Suggest a new idea for justapenguin_ca.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for using justapenguin_ca!
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered.
+      options:
+      - label: I have searched the [existing issues](https://github.com/lurkydismal/justapenguin_ca/issues)
+        required: true
+  - type: textarea
+    attributes:
+      label: Use case
+      description: |
+        Please tell us the problem you are running into that led to you wanting
+        a new feature.
+
+        Is your feature request related to a problem? Please give a clear and
+        concise description of what the problem is.
+
+        Describe the alternative solutions you've considered.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Proposal
+      description: |
+        Briefly but precisely describe what you would like justapenguin_ca to be able to do.
+
+        Consider attaching something showing what you are imagining:
+         * images
+         * videos
+         * code samples
+
+        Does this have to be provided by justapenguin_ca server directly, or can it be provided
+        by a front-end on website? If so, maybe consider implementing and
+        publishing such a change rather than filing an issue.
+    validations:
+      required: true
