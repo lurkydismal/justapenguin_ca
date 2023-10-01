@@ -630,7 +630,8 @@ function generateMatchResultsTable( _pageIndexToMoveTo, _matchesFiltered ) {
                             if ( ( l_tags !== _Result_t.anyTag ) &&
                                  ( l_tags !== _Result_t.any ) &&
                                  ( l_tags.length ) ) {
-                                if ( $( "matchTags" ).value.includes( l_tags ) ) {
+                                if ( $( "matchTags" )
+                                         .value.includes( l_tags ) ) {
                                     return;
                                 }
 
