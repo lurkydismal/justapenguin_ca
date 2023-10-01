@@ -706,7 +706,7 @@ Avoid "cute" spellings. For example, 'colors', not 'colorz'.
 
 Prefer US English spellings. For example, 'colorize', not 'colourise', and 'canceled', not 'cancelled'.
 
-!["I repwaced the Prototypes.func with Pwototypiee.funkywunks"](markdown_assets/IMG_5429.png)
+!["I repwaced the Prototypes.func with Pwototypiee.funkywunks"](markdown_assets/spelling.jpg)
 
 ### Capitalize identifiers consistent with their spelling
 

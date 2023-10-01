@@ -261,7 +261,7 @@ The following process can be used to revert code:
 
 1. Navigate to the closed pull request that contains the changes we need to revert and click
 the revert button.
-![image](markdown_assets/196801450-3cd11c84-3a63-4b9a-ac52-4506acfba391.png)
+![image](markdown_assets/revert.jpg)
 1. In the next screen you can feel free to add context to the new pull request then click the
 button to open the pull request.
 1. Assign the follow up review to a team member to review the reverted code.

@@ -211,7 +211,7 @@ a {
     width: calc(100% + var(--rgb-border-width) * 2);
     border-radius: calc(2 * var(--rgb-border-width));
     z-index: 0;
-    animation: animatedGradient 8s ease alternate infinite;
+    animation: animated-gradient 8s ease alternate infinite;
 }
 
 .matchup .player-2.winner::after {
@@ -226,7 +226,7 @@ a {
     background-size: 100% 100%, 300% 300%;
 }
 
-@keyframes animatedGradient {
+@keyframes animated-gradient {
     0% {
         background-position: 0% 100%, 0% 50%;
     }
