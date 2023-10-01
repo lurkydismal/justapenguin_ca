@@ -27,7 +27,7 @@ const config = {
     character_avatar_path : "./characters/character_avatar/",
     character_image_path : "./characters/character_full/",
 
-    image_extension : ".png",
+    image_extension : ".jpg",
 };
 
 export {config};
