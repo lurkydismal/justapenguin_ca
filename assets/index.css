@@ -4,14 +4,14 @@
 
 html {
     --default-bg: #ffffff;
-    --default-font-color: rgba(0, 0, 0, 0.85);
+    --default-font-color: rgb(0 0 0 / 0.85);
 
     --menu-bg: #f3f3f3;
     --menu-height: 56px;
     --menu-bg-hover: #ffffff;
-    --menu-font-color: rgba(0, 0, 0, 0.85);
+    --menu-font-color: rgb(0 0 0 / 0.85);
 
-    --card-title-font-color: rgba(0, 0, 0, 0.85);
+    --card-title-font-color: rgb(0 0 0 / 0.85);
     --card-border-color: #e1e1e1;
 
     --table-border-color: #e1e1e1;
@@ -201,8 +201,8 @@ a {
     border-radius: var(--rgb-border-width);
 }
 
-.matchup .player-1.winner:after,
-.matchup .player-2.winner:after {
+.matchup .player-1.winner::after,
+.matchup .player-2.winner::after {
     content: '';
     position: absolute;
     top: calc(-1 * var(--rgb-border-width));
@@ -214,13 +214,13 @@ a {
     animation: animatedGradient 8s ease alternate infinite;
 }
 
-.matchup .player-2.winner:after {
+.matchup .player-2.winner::after {
     background: linear-gradient(270deg, var(--default-bg) 10%, transparent),
         linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     background-size: 100% 100%, 300% 300%;
 }
 
-.matchup .player-1.winner:after {
+.matchup .player-1.winner::after {
     background: linear-gradient(90deg, var(--default-bg) 10%, transparent),
         linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     background-size: 100% 100%, 300% 300%;
@@ -263,13 +263,13 @@ a {
     text-decoration: underline;
 }
 
-.sorted-asc:after {
+.sorted-asc::after {
     content: " ▴";
     position: absolute;
     margin-top: 2px;
 }
 
-.sorted-desc:after {
+.sorted-desc::after {
     content: " ▾";
     position: absolute;
     margin-top: 2px;
