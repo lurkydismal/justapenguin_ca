@@ -2,16 +2,16 @@ _Replace this paragraph with a description of what this PR is changing or adding
 
 _List which issues are fixed by this PR. You must list at least one issue._
 
-_If you had to change anything in the [justapenguin_ca/tests], include a link to the migration guide as per the [breaking change policy]._
+_If you had to change anything in the [justapenguin_ca/tests][], include a link to the migration guide as per the [breaking change policy][]._
 
 ## Pre-launch Checklist
 
-- [ ] I read the [Contributor Guide] and followed the process outlined there for submitting PRs.
-- [ ] I read the [Tree Hygiene] wiki page, which explains my responsibilities.
-- [ ] I read the [justapenguin_ca Style Guide] _recently_, and have followed its advice.
+- [ ] I read the [Contributor Guide][] and followed the process outlined there for submitting PRs.
+- [ ] I read the [Tree Hygiene][] wiki page, which explains my responsibilities.
+- [ ] I read the [justapenguin_ca Style Guide][] _recently_, and have followed its advice.
 - [ ] I listed at least one issue that this PR fixes in the description above.
 - [ ] I updated/added relevant documentation (doc comments with `///`).
-- [ ] I added new tests to check the change I am making, or this PR is [test-exempt].
+- [ ] I added new tests to check the change I am making, or this PR is [test-exempt][].
 - [ ] All existing and new tests are passing.
 
 <!-- Links -->
