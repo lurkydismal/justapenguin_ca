@@ -1,0 +1,40 @@
+{
+    "players": [
+        {
+            "player": "Player",
+            "rank": 1,
+            "games": 10000,
+            "wins": 0,
+            "losses": 5000,
+            "draws": 5000,
+            "win rate": 100.02
+        },
+        {
+            "player": "Player",
+            "rank": 2,
+            "games": 10000,
+            "wins": 0,
+            "losses": 5000,
+            "draws": 5000,
+            "win rate": 100.02
+        },
+        {
+            "player": "Player",
+            "rank": 4,
+            "games": 10000,
+            "wins": 0,
+            "losses": 5000,
+            "draws": 5000,
+            "win rate": 100.02
+        },
+        {
+            "player": "Player",
+            "rank": 3,
+            "games": 10000,
+            "wins": 0,
+            "losses": 5000,
+            "draws": 5000,
+            "win rate": 100.02
+        }
+    ]
+}
