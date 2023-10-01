@@ -46,8 +46,8 @@ jobs:
         run: |
           mkdir output &&
           mv assets/* output/. &&
-          mv examples output &&
-          mv favicon.ico output
+          mv examples/*.json output/. &&
+          mv favicon.ico output/.
 
       - name: Setup Pages
         uses: actions/configure-pages@f156874f8191504dae5b037505266ed5dda6c382 # v3.0.6
