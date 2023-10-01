@@ -99,6 +99,7 @@ project (the server and website itself and all our sample code).
 * [Packages](#packages)
   * [Structure](#structure)
   * [Deciding where to put code](#deciding-where-to-put-code)
+* [Quality Assurance](#quality-assurance)
 
 ## Overview
 
@@ -1111,3 +1112,29 @@ We have two main kinds of packages:
 1. Regular packages, which are pure C/ C++.
 
 1. Plugin packages, which are pure JavaScript.
+
+## Quality Assurance
+
+To minimize size and to provide the best experience for our users, we follow these optimization steps for each image:
+
+* You'll need these packages for the tools used here:
+`imagemagick`, `jhead` and [mozjpeg](https://mozjpeg.codelove.de/binaries.html)
+
+* Convert image to JPG if in another format:
+`mogrify -format jpg <imagefile>`
+
+* Scale down image to match 4K (3840x2400) size:
+`mogrify -resize 3840x <image.jpg>`
+
+* If image is still huge in size (above 4MB), check it's quality level:
+`identify -verbose <image.jpg> | grep 'Image:\|Quality'`
+If higher than _92_, reduce it down:
+`mogrify -quality 92 <image.jpg>`
+
+* Remove all metadata except XMP and comments:
+`jhead -autorot -de -di -du -c <image.jpg>`
+
+* Losslessly optimize images with _mozjpeg_:
+`/opt/mozjpeg/bin/jpegtran -optimize -progressive -outfile 'Output.jpg' 'Input.jpg'`
+
+After renaming the resulting image to `Image_Title_by_Artist` format, it is ready for inclusion.
