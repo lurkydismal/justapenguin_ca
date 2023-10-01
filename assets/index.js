@@ -245,7 +245,7 @@ function generatePagination( _pageIndexToMoveTo, _lastPageIndex ) {
         let l_firstIndexToDraw;
 
         if ( ( _pageIndexToMoveTo === 1 ) || ( !l_kDrawLeftSide ) ) {
-            l_firstIndexToDraw = 2
+            l_firstIndexToDraw = 2;
 
         } else {
             l_firstIndexToDraw = _pageIndexToMoveTo;
@@ -639,7 +639,7 @@ function generateMatchResultsTable( _pageIndexToMoveTo, _matchesFiltered ) {
                                     l_tags = ", " + l_tags;
                                 }
 
-                                $( "matchTags" ).value += l_tags
+                                $( "matchTags" ).value += l_tags;
                             } else {
                                 $( "matchTags" ).value = "";
                             }
@@ -666,7 +666,7 @@ const fillResultsTable = ( ( _pageIndexToMoveTo, _lastPageIndex,
 
     return ( ( _pageIndexToMoveTo, _lastPageIndex, _matchesFiltered ) => {
         l_lastPageIndex = ( _lastPageIndex || l_lastPageIndex );
-        l_matchesFiltered = ( _matchesFiltered || l_matchesFiltered )
+        l_matchesFiltered = ( _matchesFiltered || l_matchesFiltered );
 
         // Hide results
         $( "results" ).classList.add( "d-none" );

@@ -16,5 +16,5 @@ import( config.markedJs_path ).then( ( _marked ) => {
                 headers : { "Content-Type" : "text/markdown; charset=utf-8" },
             },
         );
-    } )
+    } );
 } );

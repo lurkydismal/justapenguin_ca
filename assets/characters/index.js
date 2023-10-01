@@ -55,7 +55,7 @@ function selectCharacter( _this ) {
     _ClassList$add(
         currentCharImg,
         "selected",
-    )
+    );
 
     // _this.dataset.id
     _UpdateTable(
