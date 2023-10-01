@@ -50,9 +50,9 @@ jobs:
         with:
           name: github-pages
           path: |
-            'assets/.'
-            'examples/.'
-            'favicon.ico'
+            assets
+            examples
+            favicon.ico
 
       - name: Deploy to GitHub Pages
         id: deployment
