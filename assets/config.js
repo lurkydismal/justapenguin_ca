@@ -18,9 +18,9 @@ const config = {
     DOMPurifyJs_path :
         "https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js",
 
-    character_request_address : "../examples/characters_response.json",
-    index_request_address : "../examples/index_response.json",
-    statistics_request_address : "../examples/statistics_response.json",
+    character_request_address : "./characters_response.json",
+    index_request_address : "./index_response.json",
+    statistics_request_address : "./statistics_response.json",
 
     logo_image_path : "./logo/",
 
