@@ -4,14 +4,14 @@
 
 html {
     --default-bg: #fff;
-    --default-font-color: rgb(0 0 0 / 0.85);
+    --default-font-color: rgb(0 0 0 / 85%);
 
     --menu-bg: #f3f3f3;
     --menu-height: 56px;
     --menu-bg-hover: #fff;
-    --menu-font-color: rgb(0 0 0 / 0.85);
+    --menu-font-color: rgb(0 0 0 / 85%);
 
-    --card-title-font-color: rgb(0 0 0 / 0.85);
+    --card-title-font-color: rgb(0 0 0 / 85%);
     --card-border-color: #e1e1e1;
 
     --table-border-color: #e1e1e1;
