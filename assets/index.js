@@ -9,7 +9,7 @@ function getRandomCharacterId() {
     const randomCharId = chars[ Math.trunc( Math.random() * chars.length ) ];
 
     return ( randomCharId );
-};
+}
 
 document.querySelector( "meta[property=\"og:title\"]" )
     .setAttribute( "content", config.app_name );
