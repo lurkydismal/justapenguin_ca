@@ -66,7 +66,7 @@ fetch( config.index_request_address )
         const matchTagsList = [];
         const videoIdList = [];
 
-        for ( const [ index, match ] of Object.entries(
+        for ( const match of Object.values(
                   _convertedResponse.matches ) ) {
             _PushValueToListOnce( match.player_1, playerNameList );
 
