@@ -1,0 +1,315 @@
+:root {
+    --rgb-border-width: 10px;
+}
+
+html {
+    --default-bg: #ffffff;
+    --default-font-color: rgba(0, 0, 0, 0.85);
+
+    --menu-bg: #f3f3f3;
+    --menu-height: 56px;
+    --menu-bg-hover: #ffffff;
+    --menu-font-color: rgba(0, 0, 0, 0.85);
+
+    --card-title-font-color: rgba(0, 0, 0, 0.85);
+    --card-border-color: #e1e1e1;
+
+    --table-border-color: #e1e1e1;
+    --table-striped-color: #f6f6f6;
+    --table-bordered-color: #e1e1e1;
+}
+
+html[data-theme='dark'] {
+    --default-bg: #25282c;
+    --default-font-color: #ffffff;
+
+    --menu-bg: #111417;
+    --menu-height: 56px;
+    --menu-bg-hover: #25282c;
+    --menu-font-color: #ffffff;
+
+    --card-title-font-color: #ffffff;
+    --card-border-color: #484848;
+
+    --table-border-color: #484848;
+    --table-striped-color: #484848;
+    --table-bordered-color: #484848;
+}
+
+a {
+    cursor: pointer;
+}
+
+.shadow {
+    text-shadow: 0 0 9px #6b74af;
+}
+
+.select {
+    position: relative;
+}
+
+.select select {
+    padding-right: 1.5em;
+    text-overflow: ellipsis;
+}
+
+.select::after {
+    right: 0.8em;
+    border: 3px solid #1f91dc;
+    border-radius: 2px;
+    border-right: 0;
+    border-top: 0;
+    content: " ";
+    display: block;
+    height: .625em;
+    margin-top: -0.4375em;
+    pointer-events: none;
+    position: absolute;
+    top: 51%;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    width: 0.625em;
+}
+
+.select:hover::after {
+    border-color: var(--default-font-color);
+}
+
+.ms-menu .ms-menu-link {
+    float: left;
+    width: auto;
+}
+
+.ms-menu .ms-menu-link ul a {
+    width: auto;
+    padding: 0 10px;
+}
+
+.ms-menu .ms-menu-link input:checked+label div>.line1 {
+    transform: rotate(135deg);
+    position: relative;
+    top: 5px;
+}
+
+.ms-menu .ms-menu-link input:checked+label div>.line2 {
+    opacity: 0;
+}
+
+.ms-menu .ms-menu-link input:checked+label div>.line3 {
+    transform: rotate(-135deg);
+    position: relative;
+    bottom: 6px;
+}
+
+.ms-menu-link img {
+    max-height: var(--menu-height);
+    padding: 10px 0;
+}
+
+.ms-menu .ms-menu-logo {
+    overflow: hidden;
+}
+
+.ms-menu .ms-menu-logo img {
+    filter: drop-shadow(0px 0px 4px white);
+    padding-right: 6px;
+}
+
+.ms-menu {
+    margin-bottom: 10px;
+}
+
+.ms-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.match-date {
+    white-space: nowrap;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.matchup img {
+    width: 48px;
+    max-width: 60px;
+    image-rendering: -webkit-optimize-contrast;
+    border-radius: var(--rgb-border-width);
+    background: var(--default-bg);
+}
+
+@media (min-width: 576px) {
+    .d-sm-img {
+        width: 60px !important;
+    }
+}
+
+.matchup .versus {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.matchup>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.matchup .player-1 {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    flex: 1;
+    text-align: right;
+}
+
+.matchup .player-2 {
+    display: inline-flex;
+    align-items: center;
+    flex: 1;
+    text-align: left;
+}
+
+.matchup .player-1 span {
+    margin-right: 10px;
+}
+
+.matchup .player-2 span {
+    margin-left: 10px;
+}
+
+.matchup .player-1 span,
+.matchup .player-2 span {
+    word-break: keep-all;
+}
+
+.matchup .player-1.winner>img,
+.matchup .player-1.winner>span,
+.matchup .player-2.winner>img,
+.matchup .player-2.winner>span {
+    z-index: 1;
+}
+
+.matchup .player-1.winner,
+.matchup .player-2.winner {
+    background: var(--default-bg);
+    position: relative;
+    border-radius: var(--rgb-border-width);
+}
+
+.matchup .player-1.winner:after,
+.matchup .player-2.winner:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--rgb-border-width));
+    left: calc(-1 * var(--rgb-border-width));
+    height: calc(100% + var(--rgb-border-width) * 2);
+    width: calc(100% + var(--rgb-border-width) * 2);
+    border-radius: calc(2 * var(--rgb-border-width));
+    z-index: 0;
+    animation: animatedGradient 8s ease alternate infinite;
+}
+
+.matchup .player-2.winner:after {
+    background: linear-gradient(270deg, var(--default-bg) 10%, transparent),
+        linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 100% 100%, 300% 300%;
+}
+
+.matchup .player-1.winner:after {
+    background: linear-gradient(90deg, var(--default-bg) 10%, transparent),
+        linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 100% 100%, 300% 300%;
+}
+
+@keyframes animatedGradient {
+    0% {
+        background-position: 0% 100%, 0% 50%;
+    }
+
+    50% {
+        background-position: 0% 100%, 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 100%, 0% 50%;
+    }
+}
+
+.tag {
+    display: inline-flex;
+    padding: 0.2rem 0.3rem;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    background-color: #e04540;
+    color: white;
+    font-size: 80%;
+    white-space: nowrap;
+}
+
+.video-separator {
+    background: var(--table-border-color);
+}
+
+.sort-table th a {
+    cursor: pointer;
+}
+
+.sort-table th a:hover {
+    text-decoration: underline;
+}
+
+.sorted-asc:after {
+    content: " ▴";
+    position: absolute;
+    margin-top: 2px;
+}
+
+.sorted-desc:after {
+    content: " ▾";
+    position: absolute;
+    margin-top: 2px;
+}
+
+.char-select {
+    text-align: center;
+}
+
+.char-select .char-img-wrap {
+    display: inline-flex;
+    margin: 5px;
+    filter: drop-shadow(0 0 2px black);
+}
+
+.char-select .char-img {
+    background: #296b9d;
+    clip-path: polygon(0 0, calc(100% - 15px) 0%, 100% 15px, 100% 100%, calc(100% - 15px) 100%, 15px 100%, 0 calc(100% - 15px), 0 0);
+}
+
+.char-select>.selected,
+.char-select>.char-img-wrap:hover {
+    filter: drop-shadow(0 0 1px black) drop-shadow(2px -1px 2px #0fe0df) drop-shadow(-2px -1px 2px #0fe0df);
+    cursor: pointer;
+}
+
+.bg-img {
+    position: fixed;
+    left: 10px;
+    bottom: 0;
+    opacity: 0.2;
+    transition: opacity 0.2s;
+}
+
+.transparent {
+    opacity: 0;
+}
+
+.char-info .row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
