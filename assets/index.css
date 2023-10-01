@@ -3,12 +3,12 @@
 }
 
 html {
-    --default-bg: #ffffff;
+    --default-bg: #fff;
     --default-font-color: rgb(0 0 0 / 0.85);
 
     --menu-bg: #f3f3f3;
     --menu-height: 56px;
-    --menu-bg-hover: #ffffff;
+    --menu-bg-hover: #fff;
     --menu-font-color: rgb(0 0 0 / 0.85);
 
     --card-title-font-color: rgb(0 0 0 / 0.85);
@@ -21,14 +21,14 @@ html {
 
 html[data-theme='dark'] {
     --default-bg: #25282c;
-    --default-font-color: #ffffff;
+    --default-font-color: #fff;
 
     --menu-bg: #111417;
     --menu-height: 56px;
     --menu-bg-hover: #25282c;
-    --menu-font-color: #ffffff;
+    --menu-font-color: #fff;
 
-    --card-title-font-color: #ffffff;
+    --card-title-font-color: #fff;
     --card-border-color: #484848;
 
     --table-border-color: #484848;
