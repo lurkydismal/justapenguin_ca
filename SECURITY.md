@@ -16,7 +16,7 @@ We use GitHub's security advisory feature to track open security reports. You sh
 a close collaboration as we work to resolve the security vulnerability you have reported. Please reach out to
 `@example` again if you do not receive prompt attention and regular updates.
 
-##  Flagging Existing Issues as Security-related
+## Flagging Existing Issues as Security-related
 
 If you believe that an existing github issue is security-related, we ask that you send an
 email to `@example`. The email should include the github issue ID and a short
