@@ -138,7 +138,7 @@ function _ClassList$add( _element, ...args ) {
     }
 
     return ( _element );
-};
+}
 
 function _ClassList$remove( _element, ...args ) {
     for ( const _className of args ) {
@@ -146,7 +146,7 @@ function _ClassList$remove( _element, ...args ) {
     }
 
     return ( _element );
-};
+}
 
 function _AppendOptionFromListToElementsBySelector( _list, _selector ) {
     for ( const _item of _list ) {
