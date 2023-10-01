@@ -42,6 +42,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
 
+      - name: Install APT Packages
+        run: |
+          mv assets/* .
+
       - name: Setup Pages
         uses: actions/configure-pages@f156874f8191504dae5b037505266ed5dda6c382 # v3.0.6
 
@@ -50,7 +54,13 @@ jobs:
         with:
           name: github-pages
           path: |
-            assets
+            characters
+            faq
+            logo
+            statistics
+            *.js
+            *.css
+            *.html
             examples
             favicon.ico
 
