@@ -1,8 +1,8 @@
-*Replace this paragraph with a description of what this PR is changing or adding, and why.*
+_Replace this paragraph with a description of what this PR is changing or adding, and why._
 
-*List which issues are fixed by this PR. You must list at least one issue.*
+_List which issues are fixed by this PR. You must list at least one issue._
 
-*If you had to change anything in the [justapenguin_ca/tests], include a link to the migration guide as per the [breaking change policy].*
+_If you had to change anything in the [justapenguin_ca/tests], include a link to the migration guide as per the [breaking change policy]._
 
 ## Pre-launch Checklist
 
