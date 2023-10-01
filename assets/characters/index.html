@@ -1,0 +1,26 @@
+<div style="overflow-y: scroll;">
+    <script defer src="./characters/index.js"></script>
+
+    <div class="container">
+        <div class="h5 ms-content ms-text-center py-4 shadow">
+            Select a character.
+        </div>
+    </div>
+    <div class="container char-select p-2" id="char-select">
+    </div>
+    <img id="bg-img" class="bg-img" src=""
+        onload="setTimeout( () => { this.classList.remove( 'transparent' ); }, 200 )">
+    <div id="char-info-container" class="container char-info" hidden>
+        <div class="row">
+            <div class="col-sm shadow">
+                <h3><a id="char-wiki" onclick="return _RemoveHash();">Wiki page</a></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <table id="char-players" class="sort-table" data-sort="num,text,num,num,num,num,num">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
