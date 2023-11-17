@@ -1,13 +1,17 @@
-# justapenguin_ca
+<!-- :toc: macro -->
+<!-- :toc-title: -->
+<!-- :toclevels: 99 -->
+
+# justapenguin_ca <!-- omit from toc -->
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2376e2bd2d6b4925a63196278ae20358)](https://app.codacy.com/gh/lurkydismal/justapenguin_ca/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 > Outline a brief description of your project.
 > Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
 
-## Table of Contents
+## Table of Contents <!-- omit from toc -->
 
-* [General Info](#general-information)
+* [General Information](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
 * [Screenshots](#screenshots)
